@@ -198,13 +198,15 @@ Recipe (`data/trinity/recipe/nuclear_bomb.json`): 4 gunpowder + 4 TNT + 1 iron b
   - **Fixed invisible flash/cloud** — particles now sent long-distance (force flag).
   - Published to public GitHub repo with README + MIT LICENSE, plus this PLAN.md.
   - **Real nuke flash** — replaced the tiny FLASH particle (then a rejected visual-only lightning
-    bolt) with a packet-driven full-screen white HUD overlay that fades, scaled by viewer distance.
+    bolt) with a packet-driven full-screen white HUD overlay that fades, scaled by viewer distance;
+    then tuned brighter/longer (6-tick hold, ×0.90 fade, wider full-white zone).
+  - Cut the **v0.1.0 GitHub Release** with the jar attached.
 
 ## 9. Roadmap / ideas (rough priority)
 
 **Near-term / polish**
 - [ ] Real textures for the bomb block (top/side/armed) and the radiation HUD icon — replace placeholders.
-- [ ] Cut a **v0.1.0 GitHub Release** with the built jar so people can download without building.
+- [x] Cut a **v0.1.0 GitHub Release** with the built jar — done: https://github.com/kameronbrooks/Trinity/releases/tag/v0.1.0
 - [ ] Add GitHub **topics** (`minecraft`, `neoforge`, `minecraft-mod`, `mod`) for discoverability.
 - [ ] Custom detonation **sound** (a real nuke boom) instead of scaled `GENERIC_EXPLODE`.
 
