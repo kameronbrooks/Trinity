@@ -1,0 +1,10 @@
+{
+  "itemGroup.trinity": "Trinity",
+
+  "block.trinity.nuclear_bomb": "Nuclear Bomb",
+
+  "effect.trinity.radiation": "Radiation",
+
+  "death.attack.trinity.nuclear_blast": "%1$s was vaporised in a nuclear blast",
+  "death.attack.trinity.radiation": "%1$s succumbed to radiation sickness"
+}

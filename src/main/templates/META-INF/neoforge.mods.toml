@@ -1,0 +1,26 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "kameron"
+description = '''
+Trinity adds a single, spectacular block: a nuclear bomb. Arm it with flint and steel or a redstone signal and take cover. Detonation carves a crater, throws up a towering campfire-smoke mushroom cloud with a blinding flash, incinerates and levels everything within the blast radius (wood is fused into coal blocks), and kills every living thing caught in it. A lingering cloud of green radiation then poisons the ruins for minutes afterwards. The destruction is spread across many ticks so a full-size blast will not freeze or crash the game the way a wall of TNT would.
+'''
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[${neo_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"

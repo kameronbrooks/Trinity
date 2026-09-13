@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "trinity:block/nuclear_bomb_top",
+    "bottom": "trinity:block/nuclear_bomb_top",
+    "side": "trinity:block/nuclear_bomb_side"
+  }
+}

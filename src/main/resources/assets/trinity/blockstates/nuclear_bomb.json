@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "trinity:block/nuclear_bomb"
+    },
+    "lit=true": {
+      "model": "trinity:block/nuclear_bomb_armed"
+    }
+  }
+}
