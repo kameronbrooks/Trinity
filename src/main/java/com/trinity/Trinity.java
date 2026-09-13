@@ -6,6 +6,7 @@ import com.trinity.registry.TrinityCreativeTabs;
 import com.trinity.registry.TrinityEffects;
 import com.trinity.registry.TrinityItems;
 import com.trinity.registry.TrinityParticles;
+import com.trinity.network.TrinityNetwork;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -44,6 +45,8 @@ public final class Trinity {
         // BuildCreativeModeTabContentsEvent fires on the mod bus; register the vanilla-tab injection
         // there explicitly rather than relying on @EventBusSubscriber's default bus.
         modBus.addListener(TrinityCreativeTabs::addToVanillaTabs);
+        // Network payloads (the nuke-flash packet) also register on the mod bus.
+        modBus.addListener(TrinityNetwork::register);
 
         LOGGER.info("Trinity initialising — arming the device.");
     }

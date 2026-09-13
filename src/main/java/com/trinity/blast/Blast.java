@@ -15,10 +15,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import com.trinity.network.NukeFlashPayload;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.LivingEntity;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -277,6 +280,21 @@ public final class Blast {
 
     // ---------------------------------------------------------------------- effects
 
+    /** Tell every nearby player's client to flash their screen white, brighter the closer they are. */
+    private void sendFlash() {
+        double cx = center.getX() + 0.5;
+        double cy = center.getY() + 0.5;
+        double cz = center.getZ() + 0.5;
+        double flashDist = 220.0;
+        for (ServerPlayer player : level.players()) {
+            double dist = Math.sqrt(player.distanceToSqr(cx, cy, cz));
+            if (dist <= flashDist) {
+                float peak = (float) Mth.clamp((flashDist - dist) / (flashDist - radius), 0.0, 1.0);
+                PacketDistributor.sendToPlayer(player, new NukeFlashPayload(peak));
+            }
+        }
+    }
+
     private void initialBurst() {
         double x = center.getX() + 0.5;
         double y = center.getY() + 0.5;
@@ -291,6 +309,7 @@ public final class Blast {
         level.playSound(null, center, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 16.0F, 0.35F);
         level.playSound(null, center, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 10.0F, 0.15F);
 
+        sendFlash();
         killEntities();
         spawnRadiationCloud();
     }

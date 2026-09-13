@@ -72,6 +72,11 @@ src/main/java/com/trinity/
   client/
     BigSmokeParticle.java              oversized smoke particle (TextureSheetParticle, quadSize 3-6)
     TrinityClient.java                 @EventBusSubscriber(MOD, Dist.CLIENT); registers the particle
+    ClientFlash.java                   plain holder for the current flash brightness (no client imports)
+    TrinityHud.java                    @EventBusSubscriber(GAME, Dist.CLIENT); draws + fades the flash
+  network/
+    NukeFlashPayload.java              server->client packet: flash the screen white (float peak)
+    TrinityNetwork.java                registers the payload (called from Trinity via modBus.addListener)
   effect/RadiationEffect.java          harmful green effect; periodic damage via trinity:radiation
   registry/
     TrinityBlocks / TrinityItems / TrinityBlockEntities / TrinityEffects /
@@ -100,8 +105,14 @@ src/main/resources/
 a `Blast` → `BlastManager` advances every active `Blast` one slice per `ServerTickEvent.Post`.
 
 Each `Blast.tick()`:
-1. **age 0:** `initialBurst()` — flash + explosion particles, boom sounds, `killEntities()`,
+1. **age 0:** `initialBurst()` — explosion particles, boom sounds, `sendFlash()`, `killEntities()`,
    `spawnRadiationCloud()`.
+
+**Flash:** the nuke flash is a client-side **full-screen white overlay**, not a particle or lightning.
+`Blast.sendFlash()` sends a `NukeFlashPayload` (peak brightness, scaled by the viewer's distance) to
+every player within ~220 blocks; `ClientFlash` stores it, `TrinityHud` fills the screen white at that
+alpha on `RenderGuiEvent.Post` and fades it (~0.86/tick) on `ClientTickEvent.Post`. (A tried-and-
+rejected FLASH particle was too small/brief at distance; visual-only lightning read as "lightning".)
 2. **destruction:** process up to `BLOCKS_PER_TICK` offsets from `BlastShape` (center-outward), so the
    damage rolls out as a visible shockwave. Per block (`handle`):
    - unbreakable (destroySpeed < 0, e.g. bedrock) → skip
@@ -133,6 +144,10 @@ blast it's applied stacked with vanilla nausea/weakness/hunger/mining-fatigue, a
 - **Custom particle wiring** = 3 matching pieces: the `SimpleParticleType` (`TrinityParticles`), the
   client provider (`TrinityClient` on the **MOD** bus, `Dist.CLIENT`), and the JSON
   (`particles/big_smoke.json`). Mismatch → client load error.
+- **The flash is a HUD overlay driven by a packet**, not a particle/lightning. The payload handler
+  (`TrinityNetwork`, common code) must only touch `ClientFlash` (a plain float holder) — never a
+  client-only class directly — or a dedicated server would `NoClassDefFound`. `TrinityHud` (the
+  `net.minecraft.client.*` side) is a separate `Dist.CLIENT` GAME-bus subscriber.
 - **NeoForge 1.21.1 datapacks use SINGULAR folders:** `recipe/`, `loot_table/`, `tags/block/`,
   `damage_type/`. Recipe ingredients are object form (`{"item": "..."}`), not bare strings.
 - **Sound events:** some are `Holder<SoundEvent>` needing `.value()` (GENERIC_EXPLODE, NOTE_BLOCK_*),
@@ -164,6 +179,8 @@ All in `blast/Blast.java` unless noted. Single most important knob: **`RADIUS`**
 | entity damage / fire | 100000 / 300t | lethal; applyRadiation 1200t |
 | `FUSE_TICKS` | 80 | fuse length (`NuclearBombBlockEntity`) |
 | big_smoke quadSize / colour | 3–6 / grey 0.24–0.42 | puff size / shade (`client/BigSmokeParticle`) |
+| flash range / falloff | 220 blocks, full within `RADIUS` | `Blast.sendFlash()` |
+| flash fade | ×0.86 / tick | `client/ClientFlash.tick()` (higher = slower fade) |
 
 Recipe (`data/trinity/recipe/nuclear_bomb.json`): 4 gunpowder + 4 TNT + 1 iron block.
 
@@ -179,7 +196,9 @@ Recipe (`data/trinity/recipe/nuclear_bomb.json`): 4 gunpowder + 4 TNT + 1 iron b
   - Water inflow fixed (`fluidWakes` + scheduled fluid ticks).
   - Custom `big_smoke` particle for a genuinely larger mushroom cloud.
   - **Fixed invisible flash/cloud** — particles now sent long-distance (force flag).
-  - Published to public GitHub repo with README + MIT LICENSE.
+  - Published to public GitHub repo with README + MIT LICENSE, plus this PLAN.md.
+  - **Real nuke flash** — replaced the tiny FLASH particle (then a rejected visual-only lightning
+    bolt) with a packet-driven full-screen white HUD overlay that fades, scaled by viewer distance.
 
 ## 9. Roadmap / ideas (rough priority)
 
