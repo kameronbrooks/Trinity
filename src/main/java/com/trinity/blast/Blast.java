@@ -285,11 +285,12 @@ public final class Blast {
         double cx = center.getX() + 0.5;
         double cy = center.getY() + 0.5;
         double cz = center.getZ() + 0.5;
-        double flashDist = 220.0;
+        double flashDist = 260.0;        // outer edge where the flash fades to nothing
+        double fullDist = radius * 1.3;  // pure-white plateau — covers a normal viewing distance
         for (ServerPlayer player : level.players()) {
             double dist = Math.sqrt(player.distanceToSqr(cx, cy, cz));
             if (dist <= flashDist) {
-                float peak = (float) Mth.clamp((flashDist - dist) / (flashDist - radius), 0.0, 1.0);
+                float peak = (float) Mth.clamp((flashDist - dist) / (flashDist - fullDist), 0.0, 1.0);
                 PacketDistributor.sendToPlayer(player, new NukeFlashPayload(peak));
             }
         }

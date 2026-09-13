@@ -179,8 +179,8 @@ All in `blast/Blast.java` unless noted. Single most important knob: **`RADIUS`**
 | entity damage / fire | 100000 / 300t | lethal; applyRadiation 1200t |
 | `FUSE_TICKS` | 80 | fuse length (`NuclearBombBlockEntity`) |
 | big_smoke quadSize / colour | 3–6 / grey 0.24–0.42 | puff size / shade (`client/BigSmokeParticle`) |
-| flash range / falloff | 220 blocks, full within `RADIUS` | `Blast.sendFlash()` |
-| flash fade | ×0.86 / tick | `client/ClientFlash.tick()` (higher = slower fade) |
+| flash range / full-white | 260 blocks / within `RADIUS×1.3` | `Blast.sendFlash()` |
+| flash hold / fade | 6 ticks, then ×0.90 / tick | `client/ClientFlash` (hold = blinding window; higher fade = lingers) |
 
 Recipe (`data/trinity/recipe/nuclear_bomb.json`): 4 gunpowder + 4 TNT + 1 iron block.
 
