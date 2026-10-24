@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "trinity:nuclear_bomb"
+    "trinity:nuclear_bomb",
+    "trinity:uranium_ore",
+    "trinity:deepslate_uranium_ore"
   ]
 }

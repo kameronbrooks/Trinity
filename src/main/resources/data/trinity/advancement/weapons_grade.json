@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:enrichment",
+  "display": {
+    "icon": {
+      "id": "trinity:highly_enriched_uranium"
+    },
+    "title": {
+      "translate": "advancements.trinity.weapons_grade.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.weapons_grade.description"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "has_highly_enriched_uranium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:highly_enriched_uranium"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_highly_enriched_uranium"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:root",
+  "display": {
+    "icon": {
+      "id": "trinity:firing_set"
+    },
+    "title": {
+      "translate": "advancements.trinity.firing_set.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.firing_set.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "has_firing_set": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:firing_set"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_firing_set"
+    ]
+  ]
+}

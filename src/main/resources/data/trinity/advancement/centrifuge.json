@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:hexafluoride",
+  "display": {
+    "icon": {
+      "id": "trinity:gas_centrifuge"
+    },
+    "title": {
+      "translate": "advancements.trinity.centrifuge.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.centrifuge.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "has_gas_centrifuge": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:gas_centrifuge"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gas_centrifuge"
+    ]
+  ]
+}

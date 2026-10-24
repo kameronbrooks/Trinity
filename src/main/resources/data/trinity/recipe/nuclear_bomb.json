@@ -2,20 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "G": {
-      "item": "minecraft:gunpowder"
+    "S": {
+      "item": "trinity:firing_set"
     },
-    "T": {
-      "item": "minecraft:tnt"
+    "A": {
+      "item": "trinity:implosion_assembly"
     },
-    "I": {
-      "item": "minecraft:iron_block"
+    "H": {
+      "item": "trinity:bomb_housing"
+    },
+    "F": {
+      "item": "trinity:tail_fin"
     }
   },
   "pattern": [
-    "GTG",
-    "TIT",
-    "GTG"
+    " S ",
+    " A ",
+    "FHF"
   ],
   "result": {
     "id": "trinity:nuclear_bomb"

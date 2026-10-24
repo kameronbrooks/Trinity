@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:root",
+  "display": {
+    "icon": {
+      "id": "trinity:bomb_housing"
+    },
+    "title": {
+      "translate": "advancements.trinity.housing.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.housing.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "has_bomb_housing": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:bomb_housing"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bomb_housing"
+    ]
+  ]
+}

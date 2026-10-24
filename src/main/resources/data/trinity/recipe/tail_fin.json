@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "trinity:casing_plate"
+    }
+  },
+  "pattern": [
+    "P ",
+    "PP"
+  ],
+  "result": {
+    "id": "trinity:tail_fin",
+    "count": 2
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "C": {
+      "item": "minecraft:comparator"
+    }
+  },
+  "pattern": [
+    "IDI",
+    "RHR",
+    "ICI"
+  ],
+  "result": {
+    "id": "trinity:gas_centrifuge"
+  }
+}

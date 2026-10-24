@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:root",
+  "display": {
+    "icon": {
+      "id": "trinity:yellowcake"
+    },
+    "title": {
+      "translate": "advancements.trinity.yellowcake.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.yellowcake.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "has_yellowcake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:yellowcake"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_yellowcake"
+    ]
+  ]
+}

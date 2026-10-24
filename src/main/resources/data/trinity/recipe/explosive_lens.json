@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "P": {
+      "item": "minecraft:gunpowder"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "N": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    " G ",
+    "PTP",
+    " N "
+  ],
+  "result": {
+    "id": "trinity:explosive_lens",
+    "count": 2
+  }
+}

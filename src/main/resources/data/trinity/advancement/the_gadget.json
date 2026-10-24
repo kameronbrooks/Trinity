@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:implosion",
+  "display": {
+    "icon": {
+      "id": "trinity:nuclear_bomb"
+    },
+    "title": {
+      "translate": "advancements.trinity.the_gadget.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.the_gadget.description"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "has_nuclear_bomb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:nuclear_bomb"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nuclear_bomb"
+    ]
+  ]
+}

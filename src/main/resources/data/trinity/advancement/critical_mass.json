@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:metallurgy",
+  "display": {
+    "icon": {
+      "id": "trinity:fissile_core"
+    },
+    "title": {
+      "translate": "advancements.trinity.critical_mass.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.critical_mass.description"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "has_fissile_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:fissile_core"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fissile_core"
+    ]
+  ]
+}

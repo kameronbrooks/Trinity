@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:weapons_grade",
+  "display": {
+    "icon": {
+      "id": "trinity:enriched_uranium_ingot"
+    },
+    "title": {
+      "translate": "advancements.trinity.metallurgy.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.metallurgy.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "has_enriched_uranium_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:enriched_uranium_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_enriched_uranium_ingot"
+    ]
+  ]
+}

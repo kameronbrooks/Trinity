@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "U": {
+      "item": "trinity:enriched_uranium_ingot"
+    },
+    "N": {
+      "item": "trinity:neutron_initiator"
+    }
+  },
+  "pattern": [
+    "GUG",
+    "GNG",
+    "GUG"
+  ],
+  "result": {
+    "id": "trinity:fissile_core"
+  }
+}

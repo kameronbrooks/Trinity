@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "trinity:gas_centrifuge"
+    },
+    {
+      "item": "trinity:uranium_hexafluoride_canister"
+    },
+    {
+      "item": "trinity:uranium_hexafluoride_canister"
+    },
+    {
+      "item": "trinity:uranium_hexafluoride_canister"
+    },
+    {
+      "item": "trinity:uranium_hexafluoride_canister"
+    }
+  ],
+  "result": {
+    "id": "trinity:low_enriched_uranium"
+  }
+}

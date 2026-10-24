@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:centrifuge",
+  "display": {
+    "icon": {
+      "id": "trinity:low_enriched_uranium"
+    },
+    "title": {
+      "translate": "advancements.trinity.enrichment.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.enrichment.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "has_low_enriched_uranium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:low_enriched_uranium"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_low_enriched_uranium"
+    ]
+  ]
+}

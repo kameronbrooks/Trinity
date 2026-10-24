@@ -25,7 +25,9 @@ public final class TrinityCreativeTabs {
     public static final Supplier<CreativeModeTab> TRINITY = TABS.register("trinity", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.trinity"))
             .icon(() -> new ItemStack(TrinityItems.NUCLEAR_BOMB.get()))
-            .displayItems((parameters, output) -> output.accept(TrinityItems.NUCLEAR_BOMB.get()))
+            // Every DeferredItem, in registration order — which is production order (ore → bomb).
+            .displayItems((parameters, output) ->
+                    TrinityItems.ITEMS.getEntries().forEach(item -> output.accept(item.get())))
             .build());
 
     /** Registered on the mod bus from {@link Trinity}. */
@@ -33,6 +35,13 @@ public final class TrinityCreativeTabs {
         ResourceKey<CreativeModeTab> tab = event.getTabKey();
         if (tab == CreativeModeTabs.REDSTONE_BLOCKS || tab == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(TrinityItems.NUCLEAR_BOMB.get());
+        } else if (tab == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(TrinityItems.URANIUM_ORE.get());
+            event.accept(TrinityItems.DEEPSLATE_URANIUM_ORE.get());
+        } else if (tab == CreativeModeTabs.INGREDIENTS) {
+            event.accept(TrinityItems.RAW_URANIUM.get());
+            event.accept(TrinityItems.YELLOWCAKE.get());
+            event.accept(TrinityItems.ENRICHED_URANIUM_INGOT.get());
         }
     }
 }

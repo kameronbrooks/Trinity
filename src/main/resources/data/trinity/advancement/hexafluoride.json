@@ -1,0 +1,32 @@
+{
+  "parent": "trinity:yellowcake",
+  "display": {
+    "icon": {
+      "id": "trinity:uranium_hexafluoride_canister"
+    },
+    "title": {
+      "translate": "advancements.trinity.hexafluoride.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.hexafluoride.description"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "has_uranium_hexafluoride_canister": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:uranium_hexafluoride_canister"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_uranium_hexafluoride_canister"
+    ]
+  ]
+}

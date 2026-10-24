@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "N": {
+      "item": "minecraft:gold_nugget"
+    },
+    "G": {
+      "item": "minecraft:glowstone_dust"
+    }
+  },
+  "pattern": [
+    "ANA",
+    "NGN",
+    "ANA"
+  ],
+  "result": {
+    "id": "trinity:neutron_initiator"
+  }
+}

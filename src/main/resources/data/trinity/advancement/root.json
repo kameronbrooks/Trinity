@@ -1,0 +1,79 @@
+{
+  "display": {
+    "icon": {
+      "id": "trinity:uranium_ore"
+    },
+    "title": {
+      "translate": "advancements.trinity.root.title"
+    },
+    "description": {
+      "translate": "advancements.trinity.root.description"
+    },
+    "frame": "task",
+    "background": "minecraft:textures/block/deepslate.png",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "has_raw_uranium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:raw_uranium"
+          }
+        ]
+      }
+    },
+    "has_uranium_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:uranium_ore"
+          }
+        ]
+      }
+    },
+    "has_deepslate_uranium_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "trinity:deepslate_uranium_ore"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_uranium",
+      "has_uranium_ore",
+      "has_deepslate_uranium_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "trinity:yellowcake_from_smelting_raw_uranium",
+      "trinity:yellowcake_from_blasting_raw_uranium",
+      "trinity:yellowcake_from_smelting_uranium_ore",
+      "trinity:yellowcake_from_blasting_uranium_ore",
+      "trinity:uranium_hexafluoride_canister",
+      "trinity:gas_centrifuge",
+      "trinity:low_enriched_uranium",
+      "trinity:highly_enriched_uranium",
+      "trinity:enriched_uranium_ingot",
+      "trinity:neutron_initiator",
+      "trinity:fissile_core",
+      "trinity:explosive_lens",
+      "trinity:implosion_assembly",
+      "trinity:detonator_circuit",
+      "trinity:firing_set",
+      "trinity:casing_plate",
+      "trinity:tail_fin",
+      "trinity:bomb_housing",
+      "trinity:nuclear_bomb"
+    ]
+  }
+}

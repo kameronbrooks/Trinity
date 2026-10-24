@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "D": {
+      "item": "trinity:detonator_circuit"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "B": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "IDI",
+    "LBL",
+    "IDI"
+  ],
+  "result": {
+    "id": "trinity:firing_set"
+  }
+}

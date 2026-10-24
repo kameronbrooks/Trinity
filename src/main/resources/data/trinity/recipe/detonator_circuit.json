@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "Q": {
+      "item": "minecraft:quartz"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "C": {
+      "item": "minecraft:comparator"
+    },
+    "P": {
+      "item": "minecraft:repeater"
+    }
+  },
+  "pattern": [
+    "RQR",
+    "GCG",
+    "RPR"
+  ],
+  "result": {
+    "id": "trinity:detonator_circuit"
+  }
+}

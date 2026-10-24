@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 2.0,
+  "ingredient": {
+    "item": "trinity:highly_enriched_uranium"
+  },
+  "result": {
+    "id": "trinity:enriched_uranium_ingot"
+  }
+}

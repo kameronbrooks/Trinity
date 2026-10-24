@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "trinity:casing_plate"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "O O",
+    "PPP"
+  ],
+  "result": {
+    "id": "trinity:bomb_housing"
+  }
+}

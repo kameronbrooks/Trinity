@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Y": {
+      "item": "trinity:yellowcake"
+    },
+    "B": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "pattern": [
+    " I ",
+    "YBY",
+    " I "
+  ],
+  "result": {
+    "id": "trinity:uranium_hexafluoride_canister",
+    "count": 2
+  }
+}

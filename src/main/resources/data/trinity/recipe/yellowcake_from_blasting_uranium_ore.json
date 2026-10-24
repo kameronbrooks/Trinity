@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": [
+    {
+      "item": "trinity:uranium_ore"
+    },
+    {
+      "item": "trinity:deepslate_uranium_ore"
+    }
+  ],
+  "result": {
+    "id": "trinity:yellowcake"
+  },
+  "group": "yellowcake"
+}

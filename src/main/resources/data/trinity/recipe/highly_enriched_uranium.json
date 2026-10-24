@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "trinity:gas_centrifuge"
+    },
+    {
+      "item": "trinity:low_enriched_uranium"
+    },
+    {
+      "item": "trinity:low_enriched_uranium"
+    },
+    {
+      "item": "trinity:low_enriched_uranium"
+    },
+    {
+      "item": "trinity:low_enriched_uranium"
+    }
+  ],
+  "result": {
+    "id": "trinity:highly_enriched_uranium"
+  }
+}
