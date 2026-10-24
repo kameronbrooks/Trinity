@@ -32,7 +32,7 @@ death of every living thing in range, and a lingering green radiation cloud.
 - Worldgen proof: fresh normal world, seed 1945, 49 chunks → uranium ore in 144 chunk-sections
   (25 stone / 119 deepslate) vs vanilla diamond in 175 — roughly diamond-rare, mostly deepslate.
 - Static check: all 19 item/block ids resolve to model → texture → lang.
-- **Not yet played in-game by the user.**
+- Playtested in the dev client by the user (got through Metallurgy) — "excellent".
 
 ## 3. How to build / run / test
 
@@ -177,8 +177,8 @@ full-screen white overlay that holds then fades.
 ## 10. Roadmap / ideas
 
 **Near-term**
-- [ ] User playtest of 0.2.0; tune ore rarity / radioactivity / costs from feedback.
-- [ ] Rebuild the family modpack + server jars with 0.2.0; cut the **v0.2.0 GitHub Release**.
+- [x] User playtest of 0.2.0.
+- [x] Family modpack + `built-mods/` rebuilt with 0.2.0; **v0.2.0 released**: https://github.com/kameronbrooks/Trinity/releases/tag/v0.2.0
 - [ ] Real textures for the bomb block (top/side/armed) and the Radiation effect icon.
 - [ ] GitHub topics; custom detonation sound.
 
